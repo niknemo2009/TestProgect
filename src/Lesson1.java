@@ -4,7 +4,7 @@ public class Lesson1 {
     public static void main(String[] args) {
 
         Lesson1 dayWeek = new Lesson1();
-        dayWeek.determineDay("23-12-2018");
+        dayWeek.determineDay("2018-12-23");
 
     }
 
