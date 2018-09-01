@@ -17,7 +17,7 @@ public class Lesson1 {
         result = dayWeek.getDayOfWeek().toString();
 
         switch (result) {
-            case "Monday":
+            case "MONDAY":
                 System.out.println("Это понедельник");
                 break;
             case "TUESDAY":
