@@ -7,6 +7,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.util.function.Predicate;
+
 public class UserForm {
     @FXML
     Button btn1;
@@ -18,11 +20,21 @@ public class UserForm {
     DatePicker dateBirthdey;
     @FXML
     ComboBox UserSpisok;
-    ObservableList<User>  modelUser=FXCollections.observableArrayList(User.getListUser());
+    ObservableList<User> modelUser = FXCollections.observableArrayList(User.getListUser());
+    @FXML
+    RadioButton rBut1Email;
+    @FXML
+    RadioButton rBut2Birth;
+    @FXML
+    TextField search;
+    @FXML
+    ListView filtrUser;
+
 
     @FXML
-    public void initialize(){
-      UserSpisok.setItems(modelUser);
+    public void initialize() {
+        UserSpisok.setItems(modelUser);
+        filtrUser.setItems(modelUser);
     }
 
 
@@ -36,11 +48,20 @@ public class UserForm {
 
     }
 
+    public void searchUser() {
+        ObservableList<User>  temp=modelUser.filtered(new Predicate<User>() {
+            @Override
+            public boolean test(User user) {
+                return user.email.startsWith(search.getText());
+            }
+        });
+
+        filtrUser.setItems(temp);
+        System.out.println(search.getText());
+    }
 
     public void two() {
-
-        User us=((User)UserSpisok.getValue());
-
+        User us = ((User) UserSpisok.getValue());
         tf_email.setText(us.email);
         textPass.setText(us.password);
         dateBirthdey.setValue(us.birhday);

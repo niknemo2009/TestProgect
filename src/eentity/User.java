@@ -1,6 +1,7 @@
 package eentity;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -16,6 +17,7 @@ public class User implements Comparable<User>{
         this.password = password;
         this.birhday = birhday;
         listUser.add(this);
+
     }
 
    public void printUser(){
