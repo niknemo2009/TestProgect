@@ -1,5 +1,7 @@
 package lambda;
 
+ВРОДЕ РАБОТАЕТ. НО КАК-ТО КОРЯВЕНЬКО, ПО МОЕМУ.
+
 public class LambdaFunctionInter {
     int x = 9;
     int y = 5;
