@@ -18,7 +18,7 @@ public class Lesson1 {
 
         switch (result) {
             case "MONDAY":
-                System.out.println("Это понедельник****");
+                System.out.println("Это понедельник");
                 break;
             case "TUESDAY":
                 System.out.println("Это вторник");
