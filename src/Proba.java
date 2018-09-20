@@ -2,6 +2,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author User
@@ -145,9 +147,10 @@ public class Proba {
 //    }
 
     public static void main(String[] args) {
-        Proba pb = new Proba();
-        pb.rabotaDiaposonov(11, 50, 21, 60);
-
+//        Proba pb = new Proba();
+//        pb.rabotaDiaposonov(11, 50, 21, 60);
+        List<Integer> list = Stream.of(11, 50, 21, 60).collect(Collectors.toList());
+        System.out.println(list);
     }
 
 }
