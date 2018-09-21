@@ -2,7 +2,9 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.OptionalInt;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -19,8 +21,8 @@ public class Proba {
         stop1 = (stop < start ? start : stop);
 
         for (int i = start1; i <= stop1; i++) {
-                result.add(i);
-            }
+            result.add(i);
+        }
 
 //        if (start < stop) {
 //            for (int i = start; i <= stop; i++) {
@@ -35,14 +37,14 @@ public class Proba {
         return result;
     }
 
-    void rabotaDiaposonov(int p1,int p1_1,int p2,int p2_2){
+    void rabotaDiaposonov(int p1, int p1_1, int p2, int p2_2) {
         ArrayList<Integer> list1 = addList(p1, p1_1);
         ArrayList<Integer> list2 = addList(p2, p2_2);
         ArrayList<Integer> result = new ArrayList<>();
 
-        for(Integer temp: list1){
-            for (Integer temp1: list2) {
-                if(temp.equals(temp1)){
+        for (Integer temp : list1) {
+            for (Integer temp1 : list2) {
+                if (temp.equals(temp1)) {
                     result.add(temp);
                     break;
                 }
@@ -147,10 +149,36 @@ public class Proba {
 //    }
 
     public static void main(String[] args) {
-//        Proba pb = new Proba();
+        Proba pb = new Proba();
 //        pb.rabotaDiaposonov(11, 50, 21, 60);
-        List<Integer> list = Stream.of(11, 50, 21, 60).collect(Collectors.toList());
-        System.out.println(list);
+       pb.streamDiaposonov(11,50,21,60);
+
+
+    }
+
+    void streamDiaposonov(int a1, int a1_1, int b1, int b1_1) {
+//        IntStream st1=IntStream.rangeClosed(a1, a1_1);
+//        IntStream st2=IntStream.rangeClosed(b1, b1_1);
+        IntStream.concat(IntStream.rangeClosed(a1, a1_1), IntStream.rangeClosed(b1, b1_1)).
+                sorted().forEach(n->{
+
+        });
+
+                //.map(n->{ return n*5; }).forEach(System.out::println);
+
+//        IntStream  result;
+//        IntStream.Builder build1=IntStream.builder();
+//        st1.forEach(n->{
+//
+//            if(st2.filter(t->{
+//               return t==n;
+//           }).count()>1){
+//                build1.add(n);
+//                System.out.println(n+" , ");
+//            }
+//        });
+//        result=build1.build();
+
     }
 
 }
